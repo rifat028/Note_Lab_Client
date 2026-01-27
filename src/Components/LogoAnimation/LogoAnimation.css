@@ -1,0 +1,19 @@
+@keyframes letterJumpLoop {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  5% {
+    transform: translateY(-12px);
+  }
+  10% {
+    transform: translateY(0);
+  }
+}
+
+.animate-letter-loop {
+  animation-name: letterJumpLoop;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
