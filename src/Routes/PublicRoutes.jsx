@@ -20,6 +20,7 @@ import GrantAccess from "../AdminPages/GrantAccess";
 import ViewFeedbacks from "../AdminPages/ViewFeedbacks";
 import BalanceSheet from "../AdminPages/BalanceSheet";
 import Expenses from "../AdminPages/Expenses";
+import AllUsers from "../AdminPages/AllUsers";
 
 const router = createBrowserRouter([
   {
@@ -97,6 +98,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/grant-access",
         element: <GrantAccess></GrantAccess>,
+      },
+      {
+        path: "/dashboard/all-users",
+        element: <AllUsers></AllUsers>,
       },
       {
         path: "/dashboard/view-feedbacks",

@@ -7,6 +7,7 @@ import { RiGroup2Fill } from "react-icons/ri";
 import { TbCoinTakaFilled, TbListDetails } from "react-icons/tb";
 import { NavLink } from "react-router";
 import LogoAnimation from "../LogoAnimation/LogoAnimation";
+import "./Navbar.css";
 
 const Navbar = () => {
   const links = (
@@ -15,7 +16,7 @@ const Navbar = () => {
         <NavLink className="" to="/">
           <span className="flex items-center gap-2 md:gap-1">
             <IoHome />
-            হোম
+            Home
           </span>
         </NavLink>
       </li>
@@ -23,7 +24,7 @@ const Navbar = () => {
         <NavLink className="" to="/packages">
           <span className="flex items-center gap-2 md:gap-1">
             <LuNotebookPen />
-            প্যাকেজ সমূহ
+            Packages
           </span>
         </NavLink>
       </li>
@@ -31,7 +32,7 @@ const Navbar = () => {
         <NavLink to="/pricing">
           <span className="flex items-center gap-2 md:gap-1">
             <ImPriceTags />
-            মূল্য তালিকা
+            Price List
           </span>
         </NavLink>
       </li>
@@ -39,7 +40,7 @@ const Navbar = () => {
         <NavLink className="" to="/details">
           <span className="flex items-center gap-2 md:gap-1">
             <TbListDetails />
-            বিস্তারিত
+            Details
           </span>
         </NavLink>
       </li>
@@ -47,7 +48,7 @@ const Navbar = () => {
         <NavLink className="" to="/feedback">
           <span className="flex items-center gap-2 md:gap-1">
             <MdHowToVote />
-            মতামত
+            Feedback
           </span>
         </NavLink>
       </li>
@@ -55,7 +56,7 @@ const Navbar = () => {
         <NavLink className="" to="/join-us">
           <span className="flex items-center gap-2 md:gap-1">
             <RiGroup2Fill />
-            যুক্ত হন
+            Join Us
           </span>
         </NavLink>
       </li>
@@ -63,7 +64,7 @@ const Navbar = () => {
         <NavLink className="" to="/my-earnings">
           <span className="flex items-center gap-2 md:gap-1">
             <TbCoinTakaFilled />
-            আমার উপার্জন
+            My Earnings
           </span>
         </NavLink>
       </li>
@@ -71,7 +72,7 @@ const Navbar = () => {
         <NavLink className="" to="/dashboard">
           <span className="flex items-center gap-2 md:gap-1">
             <MdDashboardCustomize />
-            ড্যাশবোর্ড
+            Dash Board
           </span>
         </NavLink>
       </li>
@@ -109,7 +110,10 @@ const Navbar = () => {
           </div>
           <a className="text-xl md:text-2xl font-bold bebas-neue-regular flex items-center gap-3">
             <span className="hidden md:block">
-              <img src="/public/logo.png" className="max-w-12" />
+              <img
+                src="/public/logo.png"
+                className="max-w-12 rounded-full border-5 border-yellow-300"
+              />
             </span>
             <LogoAnimation text={"NOTE LAB"}></LogoAnimation>
           </a>

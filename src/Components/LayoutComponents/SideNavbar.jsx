@@ -1,4 +1,5 @@
 import React from "react";
+import "./Navbar.css";
 import { AiFillFileAdd } from "react-icons/ai";
 import { BsPersonVideo3 } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
@@ -17,14 +18,14 @@ import { NavLink } from "react-router";
 const SideNavbar = () => {
   return (
     <>
-      <li>
-        <NavLink className="" to="/dashboard">
+      {/* <li>
+        <NavLink className="" to="/dashboard/my-profile">
           <span className="flex items-center gap-2">
             <CgProfile />
             প্রোফাইল
           </span>
         </NavLink>
-      </li>
+      </li> */}
       <li>
         <NavLink className="" to="/dashboard/my-files">
           <span className="flex items-center gap-2">
@@ -90,7 +91,7 @@ const SideNavbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink className="" to="/dashboard/grant-access">
+        <NavLink className="" to="/dashboard/all-users">
           <span className="flex items-center gap-2">
             <FaUsers />
             সকল ব্যবহারকারী
