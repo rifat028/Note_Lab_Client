@@ -47,7 +47,7 @@ const Stats = () => {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
-              transition={{ duration: 0.5, delay: index * 0.3 }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
               className="bg-base-200 py-8 px-1 md:px-8 rounded-xl text-center shadow-md border border-base-300/30 flex flex-col justify-center"
             >
               <div className="text-primary mb-4 flex justify-center">

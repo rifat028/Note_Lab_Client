@@ -43,6 +43,7 @@ const HeroSection = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false, amount: 0.4 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+          className="p-12"
         >
           <img src="/Hero.png" alt="Hero image" />
         </motion.div>
