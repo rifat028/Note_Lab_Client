@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router";
+import AnimatedButton from "../ButtonAnimation/AnimatedButton";
 
 const AboutUs = () => {
   const navigate = useNavigate();
@@ -46,15 +47,7 @@ const AboutUs = () => {
             more on delivering impactful lessons.
           </p>
 
-          <button
-            onClick={() => navigate("/details")}
-            className="btn btn-primary btn-lg group bg-yellow-500 text-black border-0 transition-transform duration-300 hover:scale-105"
-          >
-            Learn More
-            <span className="transition-transform duration-300 group-hover:translate-x-1">
-              →
-            </span>
-          </button>
+          <AnimatedButton text="Join Us" onClick={() => navigate("/join-us")} />
         </motion.div>
       </div>
     </section>

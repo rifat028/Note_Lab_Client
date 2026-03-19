@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import { motion } from "framer-motion";
+import AnimatedButton from "../ButtonAnimation/AnimatedButton";
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -25,16 +26,10 @@ const HeroSection = () => {
             A professional platform for the teachers, tutors and institute
             owners.
           </p>
-
-          <button
+          <AnimatedButton
+            text="All Packages"
             onClick={() => navigate("/packages")}
-            className="btn btn-primary btn-lg group bg-yellow-500 text-black border-0 transition-transform duration-300 hover:scale-105"
-          >
-            View Sheets
-            <span className="transition-transform duration-300 group-hover:translate-x-1">
-              →
-            </span>
-          </button>
+          />
         </motion.div>
 
         {/* RIGHT IMAGE */}
