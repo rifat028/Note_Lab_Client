@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { motion } from "framer-motion";
 import AnimatedButton from "../ButtonAnimation/AnimatedButton";
 
@@ -20,35 +20,37 @@ const ClassGrid = () => {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-8">
       {classes.map((cls, i) => (
-        <motion.div
-          key={i}
-          initial={{ opacity: 0, scale: 0.9, y: 20 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ delay: i * 0.05 }}
-          viewport={{ once: false }}
-          className="
+        <Link to="/packages">
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: i * 0.05 }}
+            viewport={{ once: false }}
+            className="
             px-4 py-2 rounded-lg text-center font-medium
             bg-base-100 border border-base-300/40
             hover:border-primary hover:shadow-md
             transition-all duration-300
           "
-        >
-          {cls}
-        </motion.div>
+          >
+            {cls}
+          </motion.div>
+        </Link>
       ))}
     </div>
   );
 };
 
 /* ---------------- MAIN ---------------- */
-const AllPackagesSection = () => {
+const AllPackages = () => {
   const navigate = useNavigate();
 
   return (
     <section className="relative bg-base-200 py-28 overflow-hidden">
       {/* subtle background glow */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-purple-500/10 blur-3xl rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-500/10 blur-3xl rounded-full"></div>
+      {/* <div className="absolute top-0 left-0 w-72 h-72 bg-purple-500/10 blur-3xl rounded-full"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-500/10 blur-3xl rounded-full"></div> */}
 
       <div className="max-w-6xl mx-auto px-6 lg:px-12 relative z-10">
         {/* Heading */}
@@ -67,7 +69,7 @@ const AllPackagesSection = () => {
         </motion.div>
 
         {/* Content */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 md:gap-35 lg:gap-55 items-center">
           {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, x: -80 }}
@@ -112,7 +114,12 @@ const AllPackagesSection = () => {
 
               <AnimatedButton
                 text="See Demo"
-                onClick={() => navigate("/demo")}
+                onClick={() =>
+                  window.open(
+                    "https://drive.google.com/drive/folders/1yJSfeBVvAizvs0ysqCy-Tt8tnoBnCVPQ?usp=sharing",
+                    "_blank",
+                  )
+                }
               />
             </div>
 
@@ -137,4 +144,4 @@ const AllPackagesSection = () => {
   );
 };
 
-export default AllPackagesSection;
+export default AllPackages;

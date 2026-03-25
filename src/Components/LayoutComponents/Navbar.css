@@ -1,6 +1,6 @@
 ul li .active {
   background-color: orange;
-  transition: color 0.3s ease;
+  transition: color 0.8s ease;
   font-weight: 500;
 }
 ul li .active:hover {

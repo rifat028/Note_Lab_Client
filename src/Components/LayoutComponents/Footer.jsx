@@ -10,7 +10,7 @@ import { FaMessage } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-orange-100 border-t border-base-300/30 mt-20">
+    <footer className="bg-orange-100 border-t border-base-300/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         {/* Logo + About */}
         <div className="space-y-4">

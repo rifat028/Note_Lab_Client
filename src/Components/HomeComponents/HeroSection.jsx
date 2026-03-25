@@ -1,46 +1,81 @@
-import { useNavigate } from "react-router";
 import { motion } from "framer-motion";
-import AnimatedButton from "../ButtonAnimation/AnimatedButton";
 
 const HeroSection = () => {
-  const navigate = useNavigate();
-
   return (
-    <section className="w-full min-h-[90vh] flex items-center bg-base-100 transition-colors duration-300 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 pb-20 pt-5 md:pt-10 grid lg:grid-cols-2 gap-14 items-center">
-        {/* LEFT CONTENT */}
+    <section className="relative w-full min-h-screen flex items-center justify-center bg-base-100 overflow-hidden">
+      {/* ANIMATED DOTTED BACKGROUND */}
+      <div className="absolute inset-0 opacity-30 dark:opacity-20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(0,0,0,0.15)_2px,transparent_1px)] dark:bg-[radial-gradient(circle,rgba(255,255,255,0.15)_2px,transparent_1px)] bg-size-[20px_20px]"></div>
         <motion.div
-          initial={{ opacity: 0, x: -120 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false, amount: 0.4 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="space-y-8 text-center lg:text-left"
+          animate={{ backgroundPosition: ["0px 0px", "40px 40px"] }}
+          transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+          className="absolute inset-0 bg-[radial-gradient(circle,rgba(0,0,0,0.15)_2px,transparent_1px)] dark:bg-[radial-gradient(circle,rgba(255,255,255,0.15)_2px,transparent_1px)] bg-size-[20px_20px]"
+        />
+      </div>
+      {/* BACKGROUND GRADIENT */}
+      <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 via-transparent to-pink-500/10 dark:from-blue-400/10 dark:to-pink-400/10"></div>
+
+      {/* CONTENT */}
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-12 items-center">
+        {/* LEFT */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="space-y-6 text-center lg:text-left"
         >
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight bg-linear-to-r from-blue-800 to-pink-600 bg-clip-text text-transparent">
-            <span>Greatest Collection of</span>
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+            <span className="bg-linear-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent">
+              Premium Academic
+            </span>
             <br />
-            Sheet, Note and Question.
+            Resources Simplified
           </h1>
 
           <p className="text-base-content/70 text-lg md:text-xl max-w-xl mx-auto lg:mx-0">
-            A professional platform for the teachers, tutors and institute
-            owners.
+            Access high-quality notes, sheets, and curated question sets built
+            for teachers, tutors, and institutions.
           </p>
-          <AnimatedButton
-            text="All Packages"
-            onClick={() => navigate("/packages")}
-          />
+
+          {/* BUTTONS */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <motion.a
+              href="/packages"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-3 rounded-xl bg-linear-to-r from-blue-600 to-pink-500 text-white font-semibold shadow-lg hover:shadow-xl transition"
+            >
+              Explore Packages
+            </motion.a>
+
+            <motion.a
+              href="https://drive.google.com/your-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-3 rounded-xl border border-base-300 bg-base-200/50 backdrop-blur-md font-medium hover:bg-base-300 transition"
+            >
+              View Demo
+            </motion.a>
+          </div>
         </motion.div>
 
-        {/* RIGHT IMAGE */}
+        {/* RIGHT */}
         <motion.div
-          initial={{ opacity: 0, x: 120 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false, amount: 0.4 }}
-          transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-          className="p-12"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative flex justify-center"
         >
-          <img src="/Hero.png" alt="Hero image" />
+          <div className="absolute w-72 h-72 bg-blue-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute w-72 h-72 bg-pink-500/20 rounded-full blur-3xl translate-x-20 translate-y-10"></div>
+
+          <img
+            src="/Hero.png"
+            alt="Hero"
+            className="relative z-10 max-w-full w-100 md:w-125 drop-shadow-2xl"
+          />
         </motion.div>
       </div>
     </section>

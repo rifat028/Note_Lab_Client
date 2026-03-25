@@ -12,65 +12,73 @@ import "./Navbar.css";
 const Navbar = () => {
   const links = (
     <>
-      <li>
-        <NavLink className="" to="/">
-          <span className="flex items-center gap-2 md:gap-1">
+      <li className="relative overflow-hidden group mx-px">
+        <span className="absolute left-0 bottom-0 h-1 bg-yellow-500 w-0 z-0 p-0 group-hover:w-full transition-all duration-500 "></span>{" "}
+        <NavLink className="z-10 hover:bg-transparent" to="/">
+          <span className="flex items-center gap-2">
             <IoHome />
             Home
           </span>
         </NavLink>
       </li>
-      <li>
-        <NavLink className="" to="/packages">
-          <span className="flex items-center gap-2 md:gap-1">
+      <li className="relative overflow-hidden group mx-px">
+        <span className="absolute left-0 bottom-0 h-1 bg-yellow-500 w-0 z-0 p-0 group-hover:w-full transition-all duration-500 "></span>{" "}
+        <NavLink className="z-10 hover:bg-transparent" to="/packages">
+          <span className="flex items-center gap-2">
             <LuNotebookPen />
             Packages
           </span>
         </NavLink>
       </li>
-      <li>
-        <NavLink to="/pricing">
-          <span className="flex items-center gap-2 md:gap-1">
+      <li className="relative overflow-hidden group mx-px">
+        <span className="absolute left-0 bottom-0 h-1 bg-yellow-500 w-0 z-0 p-0 group-hover:w-full transition-all duration-500 "></span>{" "}
+        <NavLink className="z-10 hover:bg-transparent" to="/pricing">
+          <span className="flex items-center gap-2">
             <ImPriceTags />
             Price List
           </span>
         </NavLink>
       </li>
-      <li>
-        <NavLink className="" to="/details">
-          <span className="flex items-center gap-2 md:gap-1">
+      <li className="relative overflow-hidden group mx-px">
+        <span className="absolute left-0 bottom-0 h-1 bg-yellow-500 w-0 z-0 p-0 group-hover:w-full transition-all duration-500 "></span>{" "}
+        <NavLink className="z-10 hover:bg-transparent" to="/details">
+          <span className="flex items-center gap-2">
             <TbListDetails />
             Details
           </span>
         </NavLink>
       </li>
-      <li>
-        <NavLink className="" to="/feedback">
-          <span className="flex items-center gap-2 md:gap-1">
+      <li className="relative overflow-hidden group mx-px">
+        <span className="absolute left-0 bottom-0 h-1 bg-yellow-500 w-0 z-0 p-0 group-hover:w-full transition-all duration-500 "></span>{" "}
+        <NavLink className="z-10 hover:bg-transparent" to="/feedback">
+          <span className="flex items-center gap-2">
             <MdHowToVote />
             Feedback
           </span>
         </NavLink>
       </li>
-      <li>
-        <NavLink className="" to="/join-us">
-          <span className="flex items-center gap-2 md:gap-1">
+      <li className="relative overflow-hidden group mx-px">
+        <span className="absolute left-0 bottom-0 h-1 bg-yellow-500 w-0 z-0 p-0 group-hover:w-full transition-all duration-500 "></span>{" "}
+        <NavLink className="z-10 hover:bg-transparent" to="/join-us">
+          <span className="flex items-center gap-2">
             <RiGroup2Fill />
             Join Us
           </span>
         </NavLink>
       </li>
-      <li>
-        <NavLink className="" to="/my-earnings">
-          <span className="flex items-center gap-2 md:gap-1">
+      <li className="relative overflow-hidden group mx-px">
+        <span className="absolute left-0 bottom-0 h-1 bg-yellow-500 w-0 z-0 p-0 group-hover:w-full transition-all duration-500 "></span>{" "}
+        <NavLink className="z-10 hover:bg-transparent" to="/my-earnings">
+          <span className="flex items-center gap-2">
             <TbCoinTakaFilled />
             My Earnings
           </span>
         </NavLink>
       </li>
-      <li>
-        <NavLink className="" to="/dashboard">
-          <span className="flex items-center gap-2 md:gap-1">
+      <li className="relative overflow-hidden group mx-px">
+        <span className="absolute left-0 bottom-0 h-1 bg-yellow-500 w-0 z-0 p-0 group-hover:w-full transition-all duration-500 "></span>{" "}
+        <NavLink className="z-10 hover:bg-transparent" to="/dashboard">
+          <span className="flex items-center gap-2">
             <MdDashboardCustomize />
             Dash Board
           </span>
