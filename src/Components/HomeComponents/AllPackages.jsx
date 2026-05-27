@@ -113,7 +113,7 @@ const AllPackages = () => {
               </p>
 
               <AnimatedButton
-                text="See Demo"
+                text="view Demo"
                 onClick={() =>
                   window.open(
                     "https://drive.google.com/drive/folders/1yJSfeBVvAizvs0ysqCy-Tt8tnoBnCVPQ?usp=sharing",

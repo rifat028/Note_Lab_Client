@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="space-y-4">
           <h2 className="text-2xl font-bold">NOTE LAB</h2>
 
-          <p className="text-base-content/70 text-sm leading-relaxed max-w-60 text-justify">
+          <p className="text-base-content/70 text-sm leading-relaxed max-w-60">
             Note Lab is a digital platform providing high quality lecture
             sheets, notes and model questions for teachers, tutors and
             educational institutions across Bangladesh.

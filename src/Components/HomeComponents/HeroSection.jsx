@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router";
+import AnimatedButton from "../ButtonAnimation/AnimatedButton";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center bg-base-100 overflow-hidden">
+    <section className="relative w-full flex items-center justify-center bg-base-100 overflow-hidden py-15 md:py-20 lg:py-25">
       {/* ANIMATED DOTTED BACKGROUND */}
       <div className="absolute inset-0 opacity-30 dark:opacity-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(0,0,0,0.15)_2px,transparent_1px)] dark:bg-[radial-gradient(circle,rgba(255,255,255,0.15)_2px,transparent_1px)] bg-size-[20px_20px]"></div>
@@ -19,42 +22,39 @@ const HeroSection = () => {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-12 items-center">
         {/* LEFT */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="space-y-6 text-center lg:text-left"
+          initial={{ opacity: 0, y: -100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="space-y-6 text-center lg:text-left md:col-span-2"
         >
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-center">
             <span className="bg-linear-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent">
               Premium Academic
             </span>
             <br />
-            Resources Simplified
+            Resources
           </h1>
 
-          <p className="text-base-content/70 text-lg md:text-xl max-w-xl mx-auto lg:mx-0">
+          <p className="text-base-content/70 text-lg md:text-xl max-w-xl mx-auto lg:mx-0 text-center">
             Access high-quality notes, sheets, and curated question sets built
             for teachers, tutors, and institutions.
           </p>
 
           {/* BUTTONS */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <motion.a
-              href="/packages"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 rounded-xl bg-linear-to-r from-blue-600 to-pink-500 text-white font-semibold shadow-lg hover:shadow-xl transition"
-            >
-              Explore Packages
-            </motion.a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center ">
+            <AnimatedButton
+              text="Explore All"
+              onClick={() => navigate("/packages")}
+            />
 
             <motion.a
-              href="https://drive.google.com/your-link"
+              href="https://drive.google.com/drive/folders/1yJSfeBVvAizvs0ysqCy-Tt8tnoBnCVPQ?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 rounded-xl border border-base-300 bg-base-200/50 backdrop-blur-md font-medium hover:bg-base-300 transition"
+              className="px-6 py-3 rounded-xl border-2 border-yellow-500 bg-base-200/50 backdrop-blur-md font-medium hover:bg-base-300 transition"
             >
               View Demo
             </motion.a>
@@ -62,21 +62,15 @@ const HeroSection = () => {
         </motion.div>
 
         {/* RIGHT */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative flex justify-center"
+        {/* <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="flex justify-center items-center"
         >
-          <div className="absolute w-72 h-72 bg-blue-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute w-72 h-72 bg-pink-500/20 rounded-full blur-3xl translate-x-20 translate-y-10"></div>
-
-          <img
-            src="/Hero.png"
-            alt="Hero"
-            className="relative z-10 max-w-full w-100 md:w-125 drop-shadow-2xl"
-          />
-        </motion.div>
+          <img src="/Hero.png" alt="Hero" className="z-10 max-w-full" />
+        </motion.div> */}
       </div>
     </section>
   );

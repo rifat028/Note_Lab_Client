@@ -21,6 +21,7 @@ import ViewFeedbacks from "../AdminPages/ViewFeedbacks";
 import BalanceSheet from "../AdminPages/BalanceSheet";
 import Expenses from "../AdminPages/Expenses";
 import AllUsers from "../AdminPages/AllUsers";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -60,7 +61,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardLayout></DashboardLayout>,
+    element: (
+      <PrivateRoute>
+        <DashboardLayout />
+      </PrivateRoute>
+    ),
     children: [
       {
         index: true,
