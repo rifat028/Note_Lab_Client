@@ -1,8 +1,14 @@
 import React from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { useNavigate } from "react-router";
 
 const ProductCard = ({ product }) => {
+  const navigate = useNavigate();
   const isPremium = product.category === "premium";
+
+  const handleViewPrice = () => {
+    navigate(`/pricing/${product._id}`);
+  };
 
   const metaLabel =
     product.format_type === "Soft Copy"
@@ -92,6 +98,7 @@ const ProductCard = ({ product }) => {
             Demo
           </a>
           <button
+            onClick={handleViewPrice}
             className={`flex-1 text-[12px] font-medium rounded-[10px] py-2 px-3 transition-colors ${
               isPremium
                 ? "bg-amber-600 hover:bg-amber-700 text-white"

@@ -42,6 +42,10 @@ const router = createBrowserRouter([
         Component: Prices,
       },
       {
+        path: "/pricing/:id",
+        Component: Prices,
+      },
+      {
         path: "/details",
         Component: Detail,
       },
