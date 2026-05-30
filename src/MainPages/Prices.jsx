@@ -30,7 +30,11 @@ const Prices = () => {
       const found = products.find((p) => p._id === id);
       if (found) {
         setSelectedProduct(found);
+        setSearchTerm(found.title);
       }
+    } else {
+      setSelectedProduct(null);
+      setSearchTerm("");
     }
   }, [id, products]);
 
@@ -52,7 +56,6 @@ const Prices = () => {
   const handleProductSelect = (prodId) => {
     navigate(`/pricing/${prodId}`);
     setShowDropdown(false);
-    setSearchTerm("");
   };
 
   return (
